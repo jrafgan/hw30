@@ -8,25 +8,24 @@
 
 <body>
     <script type="text/javascript">
+        initialList = ['Bruce', 'Donald', 'Obama', 'Steve', 'Joshua', 'Ronald', 'Kelly', 'AJ', 'Leo', 'Abella'];
 
     var Host = {
         setGuestList: function() {
-            guestList = [],
-                initialList = ['Bruce', 'Donald', 'Obama', 'Steve', 'Joshua', 'Ronald', 'Kelly', 'AJ', 'Leo', 'Abella'],
-                compareRandom = function() {
-                    return Math.random() - 0.5;
-                },
-                initialList.sort(compareRandom);
+
+            guestList = [];
+
             for (var i = 0; i < initialList.length; i++) {
-                var rand = Math.round(1 - 0.5 + Math.random() * (10 - 1 + 1));
+                var rand = Math.round(Math.random() * 8);
                 if (rand > 2) {
                     guestList.push(initialList[i]);
                 }
             }
-            return initialList + '\n' + guestList;
+            return initialList + '\n\n' + guestList;
         },
+
         getFullInfo: function() {
-            return 'Initially, guest list had: ' + initialList.length + ' names.\n' + 'After Host decided, only ' + guestList.length + ' names left.\n' + 'Host decided on: ' + guestList + ' to come to the party';
+            console.log('Initially, guest list had: ' + initialList.length + ' names.\n' + 'After Host decided, only ' + guestList.length + ' names left.\n' + 'Host decided on: ' + guestList + ' to come to the party');
         },
     };
 
