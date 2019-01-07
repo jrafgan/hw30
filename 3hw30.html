@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var rad = parseInt(prompt('Enter radius'));
+
+      var Circle = {
+      p: 3.14,
+      rad: rad,
+        getCirSqu: function() {
+          return this.p * this.rad * this.rad;  
+        },
+        getCirLen: function() {
+          return 2 * this.p * this.rad;
+        }
+      };
+alert('Radius = ' + this.rad + '\n' + 'CircleSquare = ' + Circle.getCirSqu() + '\n' + 'CircleLength = ' + Circle.getCirLen());
+
+	</script>
+</body>
+</html>

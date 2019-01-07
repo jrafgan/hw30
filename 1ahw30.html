@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+    var Notebook = {
+        brand: 'Acer',
+        name: 'Aspire_E_15',
+        ram: '8Gb',
+        frequency: '2GHz',
+        screenSize: '15.6in',
+        getFullInfo: function () {
+            return 'My notebook : ' + this.brand + '\n' + this.name + '\n' + this.ram + '\n' + this.frequency + '\n' + this.screenSize;
+        }
+    };
+    console.log(Notebook.getFullInfo());
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var Find = {
+        notebookStore: { 'acer': 'Store1', 'apple': 'Store2', 'dell': 'Store3', 'toshiba': 'Store4' },
+        checkStore: function(value) {
+            switch (value) {
+                case 'acer':
+                case 'apple':
+                case 'dell':
+                case 'toshiba':
+                    if (value in this.notebookStore) {
+                        console.log('We have it in : ' + this.notebookStore[value]);
+                    }
+                    break;
+
+                default:
+                    console.log('We don\'t have such brand');
+
+            }
+        }
+    };
+    Find.checkStore('toshiba');
+    
+    </script>
+</body>
+
+</html>

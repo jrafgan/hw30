@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var Apples = {
+        kids: { 'kid1': 0, 'kid2': 0, 'kid3': 0, 'kid4': 0 },
+        giveToKid: function(value) {
+            switch (value) {
+                case 'kid1':
+                case 'kid2':
+                case 'kid3':
+                case 'kid4':
+                    this.kids[value]++;
+                    break;
+                default:
+                    console.log('This is not a kid');
+            }
+        },
+        showApples: function() {
+            for (var key in this.kids) {
+                console.log(key, this.kids[key]);
+            }
+        },
+
+        getTotal: function() {
+            var total = 0;
+            for (var key in this.kids) {
+                total += this.kids[key];
+            }
+            return total;
+        }
+    };
+
+    Apples.giveToKid('kid1');
+    Apples.giveToKid('kid2');
+    Apples.giveToKid('kid3');
+    Apples.giveToKid('kid4');
+    Apples.kids['kid1']++;
+    Apples.kids['kid3']++;
+    Apples.kids['kid4']++;
+    Apples.showApples();
+    console.log(Apples.getTotal());
+    
+    </script>
+</body>
+
+</html>

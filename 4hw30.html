@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var Host = {
+        setGuestList: function() {
+            guestList = [],
+                initialList = ['Bruce', 'Donald', 'Obama', 'Steve', 'Joshua', 'Ronald', 'Kelly', 'AJ', 'Leo', 'Abella'],
+                compareRandom = function() {
+                    return Math.random() - 0.5;
+                },
+                initialList.sort(compareRandom);
+            for (var i = 0; i < initialList.length; i++) {
+                var rand = Math.round(1 - 0.5 + Math.random() * (10 - 1 + 1));
+                if (rand > 2) {
+                    guestList.push(initialList[i]);
+                }
+            }
+            return initialList + '\n' + guestList;
+        },
+        getFullInfo: function() {
+            return 'Initially, guest list had: ' + initialList.length + ' names.\n' + 'After Host decided, only ' + guestList.length + ' names left.\n' + 'Host decided on: ' + guestList + ' to come to the party';
+        },
+    };
+
+    Host.setGuestList();
+    Host.getFullInfo();
+    
+    </script>
+</body>
+
+</html>

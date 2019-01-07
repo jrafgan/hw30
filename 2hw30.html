@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    var Calculator = {
+        num_1: '',
+        num_2: '',
+        read: function() {
+            var num1 = parseInt(prompt('Enter first number'));
+            var num2 = parseInt(prompt('Enter second number'));
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('It\'s not a number.');
+            }
+            this.num_1 = num1;
+            this.num_2 = num2;
+        },
+        sum: function() {
+            return this.num_1 + this.num_2;
+        },
+        multiply: function() {
+            return this.num_1 * this.num_2;
+        },
+        remainder: function() {
+            return this.num_1 % this.num_2;
+        }
+    };
+
+    Calculator.read();
+    alert(Calculator.sum());
+    alert(Calculator.multiply());
+    alert(Calculator.remainder());
+    
+    </script>
+</body>
+
+</html>
