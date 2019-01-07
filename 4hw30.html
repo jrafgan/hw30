@@ -11,26 +11,26 @@
         initialList = ['Bruce', 'Donald', 'Obama', 'Steve', 'Joshua', 'Ronald', 'Kelly', 'AJ', 'Leo', 'Abella'];
 
     var Host = {
-        setGuestList: function() {
+        setGuestList: function(arr) {
 
             guestList = [];
 
-            for (var i = 0; i < initialList.length; i++) {
+            for (var i = 0; i < arr.length; i++) {
                 var rand = Math.round(Math.random() * 8);
                 if (rand > 2) {
-                    guestList.push(initialList[i]);
+                    guestList.push(arr[i]);
                 }
             }
-            return initialList + '\n\n' + guestList;
+            return arr + '\n\n' + guestList;
         },
 
-        getFullInfo: function() {
-            console.log('Initially, guest list had: ' + initialList.length + ' names.\n' + 'After Host decided, only ' + guestList.length + ' names left.\n' + 'Host decided on: ' + guestList + ' to come to the party');
+        getFullInfo: function(arr) {
+            console.log('Initially, guest list had: ' + arr.length + ' names.\n' + 'After Host decided, only ' + guestList.length + ' names left.\n' + 'Host decided on: ' + guestList + ' to come to the party');
         },
     };
 
-    Host.setGuestList();
-    Host.getFullInfo();
+    Host.setGuestList(initialList);
+    Host.getFullInfo(initialList);
     
     </script>
 </body>
