@@ -7,70 +7,43 @@
 </head>
 
 <body>
-    <script type="text/javascript">
+<script type="text/javascript">
+
+    var counter = 1;
 
     var Elevator = {
-        counter: 0,
-        toFloorUp: function(value) {
-            for (i = 1; i <= value; i++) {
-                if (value < 1 || this.counter > 15) {
-                    this.errorPrint()
-                    return this.counter;
+
+        oneFloorUp: function () {
+            counter++;
+        },
+        oneFloorDown: function () {
+            counter--;
+        },
+        toFloor: function (floor) {
+            if (floor > 0 && floor < 17) {
+                while (counter !== floor) {
+                    this.printFloor(counter);
+                    if (counter < floor) {
+                        this.oneFloorUp();
+                    } else {
+                        this.oneFloorDown();
+                    }
                 }
-                this.counter++;
-                this.printFloor();
-            }
-        },
-
-        toFloorDown: function(value) {
-            for (i = 1; value < this.counter; i--) {
-                if (value < 1 || this.counter < 2) {
-                    this.errorPrint()
-                    return this.counter;
-                }
-                this.counter--;
-                this.printFloor();
-            }
-        },
-
-        printFloor: function() {
-            console.log('Elevator is on the Floor : ' + this.counter);
-        },
-
-        errorPrint: function() {
-        		console.log('No more Floor');
-        },
-
-        upOneFloor: function() {
-            if (this.counter > 15) {
-                this.errorPrint()
-                return this.counter;
+                this.printFloor(counter);
             } else {
-                this.counter++;
-                this.printFloor();
-                return this.counter;
+                console.log('No such Floor in this building');
             }
         },
-
-        downOneFloor: function() {
-
-            if (this.counter < 2) {
-                this.errorPrint()
-                return this.counter;
-            } else {
-                this.counter--;
-                this.printFloor();
-                return this.counter;
-            }
-        },
+        printFloor: function (i) {
+            console.log('Elevator is on the floor ' + i);
+        }
     };
 
-    Elevator.toFloorUp(3);
-    Elevator.upOneFloor();
-    Elevator.downOneFloor();
-    Elevator.toFloorDown(1);
+    Elevator.toFloor(6);
+    Elevator.toFloor(7);
+    Elevator.toFloor(2);
 
-    </script>
+</script>
 </body>
 
 </html>
